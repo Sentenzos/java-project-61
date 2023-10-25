@@ -1,1 +1,3 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d1723818972858e4a0a9/maintainability)](https://codeclimate.com/github/Sentenzos/java-project-61/maintainability)
+
+https://asciinema.org/a/bPG4DBcUhdVLmpcJP1ROse7Tx
