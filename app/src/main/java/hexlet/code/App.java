@@ -1,16 +1,23 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         System.out.println(
-                "Please enter the game number and press Enter.\n" +
-                "1 - Greet\n" +
-                "2 - Even\n" +
+                "Please enter the game number and press Enter.\n"
+                        +
+                "1 - Greet\n"
+                        +
+                "2 - Even\n"
+                        +
+                "3 - Calculator\n"
+                        +
                 "0 - Exit"
         );
-
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
@@ -20,8 +27,9 @@ public class App {
         if (gameNumber == 1) {
             Cli.greet();
         } else if (gameNumber == 2) {
-            var even = new Even();
-            even.run();
+            Even.run();
+        } else if (gameNumber == 3) {
+            Calculator.run();
         }
     }
 }
