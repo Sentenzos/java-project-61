@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -15,6 +16,8 @@ public class App {
                 "2 - Even\n"
                         +
                 "3 - Calculator\n"
+                        +
+                "4 - GCD\n"
                         +
                 "0 - Exit"
         );
@@ -30,6 +33,8 @@ public class App {
             Even.run();
         } else if (gameNumber == 3) {
             Calculator.run();
+        } else if (gameNumber == 4) {
+            GCD.run();
         }
     }
 }
