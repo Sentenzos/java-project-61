@@ -9,17 +9,13 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         System.out.println(
-                "Please enter the game number and press Enter.\n"
-                        +
-                "1 - Greet\n"
-                        +
-                "2 - Even\n"
-                        +
-                "3 - Calculator\n"
-                        +
-                "4 - GCD\n"
-                        +
-                "0 - Exit"
+                """
+                        Please enter the game number and press Enter.
+                        1 - Greet
+                        2 - Even
+                        3 - Calculator
+                        4 - GCD
+                        0 - Exit"""
         );
 
         Scanner scanner = new Scanner(System.in);
