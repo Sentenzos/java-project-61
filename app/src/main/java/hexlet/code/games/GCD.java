@@ -9,8 +9,8 @@ public class GCD {
 
         for (var i = 0; i < 3; i++) {
             var maxValue = 100;
-            int number1 = (int) (Math.random() * maxValue + 1);
-            int number2 = (int) (Math.random() * maxValue + 1);
+            int number1 = Engine.getRandomInt(1, maxValue);
+            int number2 = Engine.getRandomInt(1, maxValue);
 
             int minNumber = Math.min(number1, number2);
             int maxNumber = Math.max(number1, number2);
@@ -23,10 +23,8 @@ public class GCD {
                 }
             }
 
-
             boolean roundResult =
                     Engine.handleRound(minNumber + " " + maxNumber, Integer.toString(gcd), i, username);
-
 
             if (!roundResult) {
                 break;

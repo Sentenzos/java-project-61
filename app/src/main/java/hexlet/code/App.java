@@ -1,9 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
+import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -17,6 +18,7 @@ public class App {
                         3 - Calculator
                         4 - GCD
                         5 - Progression
+                        6 - Prime
                         0 - Exit"""
         );
 
@@ -35,7 +37,8 @@ public class App {
             GCD.run();
         } else if (gameNumber == 5) {
             Progression.run();
+        } else if (gameNumber == 6) {
+            Prime.run();
         }
     }
 }
-

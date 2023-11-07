@@ -12,8 +12,8 @@ public class Progression {
             int maxStep = 10;
             int progressionLength = 10;
             int startNumber = (int) (Math.random() * maxStartNumber + 1);
-            int step = (int) (Math.random() * maxStep + 1);
-            int skippedStep = (int) (Math.random() * progressionLength + 1);
+            int step = Engine.getRandomInt(1, maxStep);
+            int skippedStep = Engine.getRandomInt(1, maxStep);
 
             String progressionNumbersString = "";
             var resultNumber = 0;
@@ -21,8 +21,13 @@ public class Progression {
 
             for (var j = 0; j < progressionLength; j++) {
                 if (j == 0) {
-                    progressionNumbersString += startNumber;
                     resultNumber += startNumber;
+                    if (skippedStep == 0) {
+                        progressionNumbersString = "..";
+                        correctAnswer = resultNumber;
+                    } else {
+                        progressionNumbersString += startNumber;
+                    }
                 } else if (j == skippedStep - 1) {
                     progressionNumbersString += " ..";
                     correctAnswer = resultNumber + step;
@@ -42,3 +47,4 @@ public class Progression {
         }
     }
 }
+

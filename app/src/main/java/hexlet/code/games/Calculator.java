@@ -13,7 +13,7 @@ public class Calculator {
             int number2 = (int) (Math.random() * maxNumber + 1);
 
             String[] operators = {"+", "-", "*"};
-            int operatorIndex = (int) (Math.random() * 3 + 1);
+            int operatorIndex = Engine.getRandomInt(0, 2);
             var operator = operators[operatorIndex];
 
             boolean roundResult;
