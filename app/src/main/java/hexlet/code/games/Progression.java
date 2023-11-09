@@ -5,18 +5,17 @@ import hexlet.code.Engine;
 public class Progression {
     public static void run() {
         Engine.printRules("What number is missing in the progression?");
+        var username = Engine.greet();
 
         for (var i = 0; i < 3; i++) {
-            var roundResult = Progression.process(i);
-
+            var roundResult = Progression.process(i, username);
             if (!roundResult) {
                 break;
             }
         }
     }
 
-    public static boolean process(int roundNumber) {
-        var username = Engine.greet();
+    public static boolean process(int roundNumber, String username) {
         var maxStartNumber = 25;
         int maxStep = 10;
         int progressionLength = 10;
