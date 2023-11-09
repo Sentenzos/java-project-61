@@ -31,7 +31,7 @@ public class Calculator {
             default -> 0;
         };
 
-        return Engine.handleRound(number1 + operator + number2,
+        return Engine.handleRound(number1 + " " + operator + " " + number2,
                 Integer.toString(mathExpressionResult), roundNumber, username);
 
     }
