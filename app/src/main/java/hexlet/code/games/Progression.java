@@ -17,18 +17,15 @@ public class Progression {
 
     public static boolean process(int roundNumber) {
         var username = Engine.greet();
-
         var maxStartNumber = 25;
         int maxStep = 10;
         int progressionLength = 10;
         int startNumber = (int) (Math.random() * maxStartNumber + 1);
         int step = Engine.getRandomInt(1, maxStep);
         int skippedStep = Engine.getRandomInt(1, maxStep);
-
         String progressionNumbersString = "";
         var resultNumber = 0;
         var correctAnswer = 0;
-
         for (var j = 0; j < progressionLength; j++) {
             if (j == 0) {
                 resultNumber += startNumber;
@@ -47,9 +44,7 @@ public class Progression {
                 resultNumber += step;
             }
         }
-
-        return Engine.handleRound(progressionNumbersString,
-                Integer.toString(correctAnswer), roundNumber, username);
+        return Engine.handleRound(progressionNumbersString, Integer.toString(correctAnswer), roundNumber, username);
     }
 }
 
