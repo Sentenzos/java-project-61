@@ -35,7 +35,7 @@ public class Progression {
                     progressionNumbersString += startNumber;
                 }
             } else if (j == skippedStep - 1) {
-                progressionNumbersString += " ..";
+                progressionNumbersString += "..";
                 correctAnswer = resultNumber + step;
                 resultNumber += step;
             } else {
