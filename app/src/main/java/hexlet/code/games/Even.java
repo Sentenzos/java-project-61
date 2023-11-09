@@ -8,19 +8,21 @@ public class Even {
         Engine.printRules("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (var i = 0; i < 3; i++) {
-            var maxNumber = 50;
-            int number = (int) (Math.random() * maxNumber + 1);
-            boolean roundResult;
-
-            if (number % 2 == 0) {
-                roundResult = Engine.handleRound(Integer.toString(number), "yes", i, username);
-            } else {
-                roundResult = Engine.handleRound(Integer.toString(number), "no", i, username);
-            }
-
+            var roundResult = Even.process(i, username);
             if (!roundResult) {
                 break;
             }
+        }
+    }
+
+    public static boolean process(int roundNumber, String username) {
+        var maxNumber = 50;
+        int number = (int) (Math.random() * maxNumber + 1);
+
+        if (number % 2 == 0) {
+            return Engine.handleRound(Integer.toString(number), "yes", roundNumber, username);
+        } else {
+            return Engine.handleRound(Integer.toString(number), "no", roundNumber, username);
         }
     }
 }

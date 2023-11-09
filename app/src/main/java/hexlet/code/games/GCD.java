@@ -8,28 +8,31 @@ public class GCD {
         Engine.printRules("Find the greatest common divisor of given numbers.");
 
         for (var i = 0; i < 3; i++) {
-            var maxValue = 100;
-            int number1 = Engine.getRandomInt(1, maxValue);
-            int number2 = Engine.getRandomInt(1, maxValue);
-
-            int minNumber = Math.min(number1, number2);
-            int maxNumber = Math.max(number1, number2);
-
-            int gcd = 1;
-
-            for (var j = 1; j < minNumber; j++) {
-                if (minNumber % j == 0 && maxNumber % j == 0) {
-                    gcd = j;
-                }
-            }
-
-            boolean roundResult =
-                    Engine.handleRound(minNumber + " " + maxNumber, Integer.toString(gcd), i, username);
-
+            var roundResult = GCD.process(i, username);
             if (!roundResult) {
                 break;
             }
         }
+    }
+
+    public static boolean process(int roundNumber, String username) {
+        var maxValue = 100;
+        int number1 = Engine.getRandomInt(1, maxValue);
+        int number2 = Engine.getRandomInt(1, maxValue);
+
+        int minNumber = Math.min(number1, number2);
+        int maxNumber = Math.max(number1, number2);
+
+        int gcd = 1;
+
+        for (var j = 1; j < minNumber; j++) {
+            if (minNumber % j == 0 && maxNumber % j == 0) {
+                gcd = j;
+            }
+        }
+
+        return Engine.handleRound(minNumber + " " + maxNumber,
+                Integer.toString(gcd), roundNumber, username);
     }
 }
 
