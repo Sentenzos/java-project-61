@@ -24,10 +24,10 @@ application {
     mainClass = "hexlet.code.App"
 }
 
-//compileJava {
-//    options.release = 21
-//}
-//
-//run {
-//    standardInput = System.in
-//}
+compileJava {
+    options.release = 21
+}
+
+run {
+    standardInput = System.in
+}

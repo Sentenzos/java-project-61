@@ -33,7 +33,7 @@ public class Engine {
             System.out.println("Correct!");
 
             if (currentRound == 2) {
-                System.out.println("Congratulations, " + username + " !");
+                System.out.println("Congratulations, " + username + "!");
             }
 
             return true;
