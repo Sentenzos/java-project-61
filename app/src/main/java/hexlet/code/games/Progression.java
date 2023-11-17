@@ -22,28 +22,19 @@ public class Progression {
         int startNumber = (int) (Math.random() * maxStartNumber + 1);
         int step = Engine.getRandomInt(1, maxStep);
         int skippedStep = Engine.getRandomInt(1, maxStep);
-        String progressionNumbersString = "";
-        var resultNumber = 0;
+        var progressionNumbersString = new StringBuilder();
+        int resultNumber = startNumber;
         var correctAnswer = 0;
         for (var j = 0; j < progressionLength; j++) {
-            if (j == 0) {
-                resultNumber += startNumber;
-                if (skippedStep == 0) {
-                    progressionNumbersString = "..";
-                    correctAnswer = resultNumber;
-                } else {
-                    progressionNumbersString += startNumber;
-                }
-            } else if (j == skippedStep - 1) {
-                progressionNumbersString += " ..";
-                correctAnswer = resultNumber + step;
-                resultNumber += step;
+            resultNumber += step;
+            if (j == skippedStep - 1) {
+                progressionNumbersString.append(" ..");
+                correctAnswer = resultNumber;
             } else {
-                progressionNumbersString += " " + (resultNumber + step);
-                resultNumber += step;
+                progressionNumbersString.append(" " + resultNumber);
             }
         }
-        return Engine.handleRound(progressionNumbersString, Integer.toString(correctAnswer), roundNumber, username);
+        return Engine.handleRound(progressionNumbersString.toString(), Integer.toString(correctAnswer),
+                roundNumber, username);
     }
 }
-
