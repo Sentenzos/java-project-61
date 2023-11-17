@@ -3,13 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calculator {
-    final static int maxNumber = 100;
+    static final int MaxNumber = 100;
 
     public static void run() {
         var username = Engine.greet();
         Engine.printRules("What is the result of the expression?");
 
-        for (var i = 0; i < Engine.rounds; i++) {
+        for (var i = 0; i < Engine.Rounds; i++) {
             var roundResult = Calculator.process(i, username);
             if (!roundResult) {
                 break;
@@ -18,8 +18,8 @@ public class Calculator {
     }
 
     public static boolean process(int roundNumber, String username) {
-        int number1 = (int) (Math.random() * maxNumber + 1);
-        int number2 = (int) (Math.random() * maxNumber + 1);
+        int number1 = (int) (Math.random() * MaxNumber + 1);
+        int number2 = (int) (Math.random() * MaxNumber + 1);
 
         String[] operators = {"+", "-", "*"};
         int operatorIndex = Engine.getRandomInt(0, 2);

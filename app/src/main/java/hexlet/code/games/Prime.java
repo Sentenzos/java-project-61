@@ -3,13 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
-    final static int maxNumber = 100;
+    static final int MaxNumber = 100;
 
     public static void run() {
         var username = Engine.greet();
         Engine.printRules("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (var i = 0; i < Engine.rounds; i++) {
+        for (var i = 0; i < Engine.Rounds; i++) {
             var roundResult = Prime.process(i, username);
             if (!roundResult) {
                 break;
@@ -18,7 +18,7 @@ public class Prime {
     }
 
     public static boolean process(int roundNumber, String username) {
-        int randomNumber = Engine.getRandomInt(2, maxNumber);
+        int randomNumber = Engine.getRandomInt(2, MaxNumber);
 
         var correctAnswer = "yes";
 

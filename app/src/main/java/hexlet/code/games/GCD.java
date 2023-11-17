@@ -3,13 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCD {
-    final static int maxValue = 100;
+    static final int MaxValue = 100;
 
     public static void run() {
         var username = Engine.greet();
         Engine.printRules("Find the greatest common divisor of given numbers.");
 
-        for (var i = 0; i < Engine.rounds; i++) {
+        for (var i = 0; i < Engine.Rounds; i++) {
             var roundResult = GCD.process(i, username);
             if (!roundResult) {
                 break;
@@ -18,8 +18,8 @@ public class GCD {
     }
 
     public static boolean process(int roundNumber, String username) {
-        int number1 = Engine.getRandomInt(1, maxValue);
-        int number2 = Engine.getRandomInt(1, maxValue);
+        int number1 = Engine.getRandomInt(1, MaxValue);
+        int number2 = Engine.getRandomInt(1, MaxValue);
 
         int minNumber = Math.min(number1, number2);
         int maxNumber = Math.max(number1, number2);

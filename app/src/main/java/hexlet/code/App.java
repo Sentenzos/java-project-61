@@ -1,7 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
 import hexlet.code.games.Calculator;
+import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
@@ -9,12 +9,12 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    final static int greet = 1;
-    final static int even = 2;
-    final static int calculator = 3;
-    final static int gcd = 4;
-    final static int progression = 5;
-    final static int prime = 6;
+    static final int GreetConst = 1;
+    static final int EvenConst = 2;
+    static final int CalculatorConst = 3;
+    static final int GcdConst = 4;
+    static final int ProgressionConst = 5;
+    static final int PrimeConst = 6;
 
     public static void main(String[] args) {
         System.out.println(
@@ -34,17 +34,17 @@ public class App {
 
         int gameNumber = scanner.nextInt();
 
-        if (gameNumber == greet) {
+        if (gameNumber == GreetConst) {
             Cli.greet();
-        } else if (gameNumber == even) {
+        } else if (gameNumber == EvenConst) {
             Even.run();
-        } else if (gameNumber == calculator) {
+        } else if (gameNumber == CalculatorConst) {
             Calculator.run();
-        } else if (gameNumber == gcd) {
+        } else if (gameNumber == GcdConst) {
             GCD.run();
-        } else if (gameNumber == progression) {
+        } else if (gameNumber == ProgressionConst) {
             Progression.run();
-        } else if (gameNumber == prime) {
+        } else if (gameNumber == PrimeConst) {
             Prime.run();
         }
     }
