@@ -3,11 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
+    final static int maxStartNumber = 25;
+    final static int maxStep = 10;
+    final static int progressionLength = 10;
+
     public static void run() {
         Engine.printRules("What number is missing in the progression?");
         var username = Engine.greet();
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Engine.rounds; i++) {
             var roundResult = Progression.process(i, username);
             if (!roundResult) {
                 break;
@@ -16,9 +20,6 @@ public class Progression {
     }
 
     public static boolean process(int roundNumber, String username) {
-        var maxStartNumber = 25;
-        int maxStep = 10;
-        int progressionLength = 10;
         int startNumber = (int) (Math.random() * maxStartNumber + 1);
         int step = Engine.getRandomInt(1, maxStep);
         int skippedStep = Engine.getRandomInt(1, maxStep);

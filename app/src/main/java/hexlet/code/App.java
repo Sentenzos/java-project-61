@@ -9,6 +9,13 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
+    final static int greet = 1;
+    final static int even = 2;
+    final static int calculator = 3;
+    final static int gcd = 4;
+    final static int progression = 5;
+    final static int prime = 6;
+
     public static void main(String[] args) {
         System.out.println(
                 """
@@ -27,17 +34,17 @@ public class App {
 
         int gameNumber = scanner.nextInt();
 
-        if (gameNumber == 1) {
+        if (gameNumber == greet) {
             Cli.greet();
-        } else if (gameNumber == 2) {
+        } else if (gameNumber == even) {
             Even.run();
-        } else if (gameNumber == 3) {
+        } else if (gameNumber == calculator) {
             Calculator.run();
-        } else if (gameNumber == 4) {
+        } else if (gameNumber == gcd) {
             GCD.run();
-        } else if (gameNumber == 5) {
+        } else if (gameNumber == progression) {
             Progression.run();
-        } else if (gameNumber == 6) {
+        } else if (gameNumber == prime) {
             Prime.run();
         }
     }
