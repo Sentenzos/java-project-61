@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Prime {
     public static void run() {
         var username = Engine.greet();
-        Engine.printRules("What is the result of the expression?");
+        Engine.printRules("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (var i = 0; i < 3; i++) {
             var roundResult = Prime.process(i, username);
