@@ -34,7 +34,8 @@ public class Progression {
                 progressionNumbersString.append(" " + resultNumber);
             }
         }
-        return Engine.handleRound(progressionNumbersString.toString(), Integer.toString(correctAnswer),
+
+        return Engine.handleRound(progressionNumbersString.toString().trim(), Integer.toString(correctAnswer),
                 roundNumber, username);
     }
 }
