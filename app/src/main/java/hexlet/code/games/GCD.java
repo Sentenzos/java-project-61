@@ -25,7 +25,7 @@ public class GCD {
 
         int gcd = 1;
 
-        for (var j = 1; j < minNumber; j++) {
+        for (var j = 1; j <= minNumber; j++) {
             if (minNumber % j == 0 && maxNumber % j == 0) {
                 gcd = j;
             }
