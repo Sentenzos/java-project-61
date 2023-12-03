@@ -6,18 +6,17 @@ public class Prime {
     static final int MAX_NUMBER = 100;
 
     public static void run() {
-        var username = Engine.greet();
-        Engine.printRules("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Engine.greet("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = Prime.process(i, username);
+            var roundResult = Prime.process(i);
             if (!roundResult) {
                 break;
             }
         }
     }
 
-    public static boolean process(int roundNumber, String username) {
+    public static boolean process(int roundNumber) {
         int randomNumber = Util.getRandomInt(2, MAX_NUMBER);
 
         var correctAnswer = "yes";
@@ -31,6 +30,6 @@ public class Prime {
         }
 
         return Engine.handleRound(Integer.toString(randomNumber),
-                correctAnswer, roundNumber, username);
+                correctAnswer, roundNumber);
     }
 }

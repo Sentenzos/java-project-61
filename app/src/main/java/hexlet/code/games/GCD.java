@@ -6,18 +6,17 @@ public class GCD {
     static final int MAX_VALUE = 100;
 
     public static void run() {
-        var username = Engine.greet();
-        Engine.printRules("Find the greatest common divisor of given numbers.");
+        Engine.greet("Find the greatest common divisor of given numbers.");
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = GCD.process(i, username);
+            var roundResult = GCD.process(i);
             if (!roundResult) {
                 break;
             }
         }
     }
 
-    public static boolean process(int roundNumber, String username) {
+    public static boolean process(int roundNumber) {
         int number1 = Util.getRandomInt(1, MAX_VALUE);
         int number2 = Util.getRandomInt(1, MAX_VALUE);
 
@@ -33,7 +32,7 @@ public class GCD {
         }
 
         return Engine.handleRound(minNumber + " " + maxNumber,
-                Integer.toString(gcd), roundNumber, username);
+                Integer.toString(gcd), roundNumber);
     }
 }
 

@@ -8,18 +8,17 @@ public class Progression {
     static final int PROGRESSION_LENGTH = 10;
 
     public static void run() {
-        Engine.printRules("What number is missing in the progression?");
-        var username = Engine.greet();
+        Engine.greet("What number is missing in the progression?");
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = Progression.process(i, username);
+            var roundResult = Progression.process(i);
             if (!roundResult) {
                 break;
             }
         }
     }
 
-    public static boolean process(int roundNumber, String username) {
+    public static boolean process(int roundNumber) {
         int startNumber = (int) (Math.random() * MAX_START_NUMBER + 1);
         int step = Util.getRandomInt(1, MAX_STEP);
         int skippedStep = Util.getRandomInt(1, MAX_STEP);
@@ -37,6 +36,6 @@ public class Progression {
         }
 
         return Engine.handleRound(progressionNumbersString.toString().trim(), Integer.toString(correctAnswer),
-                roundNumber, username);
+                roundNumber);
     }
 }
