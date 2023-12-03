@@ -18,8 +18,8 @@ public class GCD {
     }
 
     public static boolean process(int roundNumber, String username) {
-        int number1 = Engine.getRandomInt(1, MAX_VALUE);
-        int number2 = Engine.getRandomInt(1, MAX_VALUE);
+        int number1 = Util.getRandomInt(1, MAX_VALUE);
+        int number2 = Util.getRandomInt(1, MAX_VALUE);
 
         int minNumber = Math.min(number1, number2);
         int maxNumber = Math.max(number1, number2);

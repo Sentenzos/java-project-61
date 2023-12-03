@@ -21,8 +21,8 @@ public class Progression {
 
     public static boolean process(int roundNumber, String username) {
         int startNumber = (int) (Math.random() * MAX_START_NUMBER + 1);
-        int step = Engine.getRandomInt(1, MAX_STEP);
-        int skippedStep = Engine.getRandomInt(1, MAX_STEP);
+        int step = Util.getRandomInt(1, MAX_STEP);
+        int skippedStep = Util.getRandomInt(1, MAX_STEP);
         var progressionNumbersString = new StringBuilder();
         int resultNumber = startNumber;
         var correctAnswer = 0;

@@ -18,7 +18,7 @@ public class Even {
     }
 
     public static boolean process(int roundNumber, String username) {
-        int number = (int) (Math.random() * MAX_NUMBER + 1);
+        int number = Util.getRandomInt(1, MAX_NUMBER);
 
         if (number % 2 == 0) {
             return Engine.handleRound(Integer.toString(number), "yes", roundNumber, username);

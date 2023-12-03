@@ -18,7 +18,7 @@ public class Prime {
     }
 
     public static boolean process(int roundNumber, String username) {
-        int randomNumber = Engine.getRandomInt(2, MAX_NUMBER);
+        int randomNumber = Util.getRandomInt(2, MAX_NUMBER);
 
         var correctAnswer = "yes";
 

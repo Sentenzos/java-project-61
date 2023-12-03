@@ -22,7 +22,7 @@ public class Calculator {
         int number2 = (int) (Math.random() * MAX_NUMBER + 1);
 
         String[] operators = {"+", "-", "*"};
-        int operatorIndex = Engine.getRandomInt(0, 2);
+        int operatorIndex = Util.getRandomInt(0, 2);
         var operator = operators[operatorIndex];
 
         int mathExpressionResult = switch (operator) {
