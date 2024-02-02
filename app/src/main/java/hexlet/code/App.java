@@ -25,7 +25,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
 
-        String gameNumber =  Integer.toString(scanner.nextInt());
+        String gameNumber = Integer.toString(scanner.nextInt());
 
         switch (gameNumber) {
             case "1" -> Cli.greet();
@@ -35,7 +35,6 @@ public class App {
             case "5" -> Progression.run();
             case "6" -> Prime.run();
             default -> {
-                return;
             }
         }
     }

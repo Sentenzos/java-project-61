@@ -4,32 +4,32 @@ import hexlet.code.Engine;
 
 public class Prime {
     static final int MAX_NUMBER = 100;
+    static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void run() {
-        Engine.greet("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = Prime.process(i);
-            if (!roundResult) {
-                break;
-            }
+            String[] roundData = Prime.prepareData();
+            gameData[i] = roundData;
         }
+
+        Engine.handleGame(RULES, gameData);
     }
 
-    public static boolean process(int roundNumber) {
+    public static String[] prepareData() {
         int randomNumber = Util.getRandomInt(2, MAX_NUMBER);
 
-        var correctAnswer = "yes";
+        String question = Integer.toString(randomNumber);
+        String correctAnswer = "yes";
 
         for (var j = 2; j < randomNumber; j++) {
             if (randomNumber % j == 0) {
-                System.out.println(randomNumber);
                 correctAnswer = "no";
                 break;
             }
         }
 
-        return Engine.handleRound(Integer.toString(randomNumber),
-                correctAnswer, roundNumber);
+        return new String[] {question, correctAnswer};
     }
 }

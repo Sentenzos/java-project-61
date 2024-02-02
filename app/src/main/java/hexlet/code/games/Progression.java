@@ -6,19 +6,20 @@ public class Progression {
     static final int MAX_START_NUMBER = 25;
     static final int MAX_STEP = 10;
     static final int PROGRESSION_LENGTH = 10;
+    static final String RULES = "What number is missing in the progression?";
 
     public static void run() {
-        Engine.greet("What number is missing in the progression?");
+        String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = Progression.process(i);
-            if (!roundResult) {
-                break;
-            }
+            String[] roundData = Progression.prepareData();
+            gameData[i] = roundData;
         }
+
+        Engine.handleGame(RULES, gameData);
     }
 
-    public static boolean process(int roundNumber) {
+    public static String[] prepareData() {
         int startNumber = (int) (Math.random() * MAX_START_NUMBER + 1);
         int step = Util.getRandomInt(1, MAX_STEP);
         int skippedStep = Util.getRandomInt(1, MAX_STEP);
@@ -31,11 +32,12 @@ public class Progression {
                 progressionNumbersString.append(" ..");
                 correctAnswer = resultNumber;
             } else {
-                progressionNumbersString.append(" " + resultNumber);
+                progressionNumbersString.append(" ").append(resultNumber);
             }
         }
 
-        return Engine.handleRound(progressionNumbersString.toString().trim(), Integer.toString(correctAnswer),
-                roundNumber);
+        String question = progressionNumbersString.toString().trim();
+
+        return new String[] {question, Integer.toString(correctAnswer)};
     }
 }

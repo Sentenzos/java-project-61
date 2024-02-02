@@ -4,21 +4,22 @@ import hexlet.code.Engine;
 
 public class Calculator {
     static final int MAX_NUMBER = 100;
+    static final String RULES = "What is the result of the expression?";
 
     public static void run() {
-        Engine.greet("What is the result of the expression?");
+        String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = Calculator.process(i);
-            if (!roundResult) {
-                break;
-            }
+            String[] roundData = Calculator.prepareData();
+            gameData[i] = roundData;
         }
+
+        Engine.handleGame(RULES, gameData);
     }
 
-    public static boolean process(int roundNumber) {
-        int number1 = (int) (Math.random() * MAX_NUMBER + 1);
-        int number2 = (int) (Math.random() * MAX_NUMBER + 1);
+    private static String[] prepareData() {
+        int number1 = Util.getRandomInt(1, MAX_NUMBER);
+        int number2 = Util.getRandomInt(1, MAX_NUMBER);
 
         String[] operators = {"+", "-", "*"};
         int operatorIndex = Util.getRandomInt(0, 2);
@@ -31,8 +32,9 @@ public class Calculator {
             default -> 0;
         };
 
-        return Engine.handleRound(number1 + " " + operator + " " + number2,
-                Integer.toString(mathExpressionResult), roundNumber);
+        String question = number1 + " " + operator + " " + number2;
+        String correctAnswer = Integer.toString(mathExpressionResult);
 
+        return new String[]{question, correctAnswer};
     }
 }

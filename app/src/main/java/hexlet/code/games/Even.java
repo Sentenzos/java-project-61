@@ -4,26 +4,25 @@ import hexlet.code.Engine;
 
 public class Even {
     static final int MAX_NUMBER = 50;
+    static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void run() {
-        Engine.greet("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            var roundResult = Even.process(i);
-            if (!roundResult) {
-                break;
-            }
+            String[] roundData = Even.prepareData();
+            gameData[i] = roundData;
         }
+
+        Engine.handleGame(RULES, gameData);
     }
 
-    public static boolean process(int roundNumber) {
+    public static String[] prepareData() {
         int number = Util.getRandomInt(1, MAX_NUMBER);
+        String question = Integer.toString(number);
+        String correctAnswer = number % 2 == 0 ? "yes" : "no";
 
-        if (number % 2 == 0) {
-            return Engine.handleRound(Integer.toString(number), "yes", roundNumber);
-        } else {
-            return Engine.handleRound(Integer.toString(number), "no", roundNumber);
-        }
+        return new String[]{question, correctAnswer};
     }
 }
 
