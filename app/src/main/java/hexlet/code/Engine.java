@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int ROUNDS = 3;
-    public static String username = "";
+    private static String name = "";
 
     public static void greet(String rules) {
         System.out.println("Welcome to the Brain Games!");
@@ -14,7 +14,7 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
 
         String username = scanner.next();
-        Engine.username = username;
+        Engine.name = username;
 
         System.out.println("Hello, " + username + "!");
 
@@ -38,7 +38,7 @@ public class Engine {
             System.out.println("Correct!");
 
             if (currentRound == 2) {
-                System.out.println("Congratulations, " + username + "!");
+                System.out.println("Congratulations, " + name + "!");
             }
 
             return true;
@@ -46,7 +46,7 @@ public class Engine {
             System.out.println(
                     "'" + answer + "'" + " is wrong answer ;(. Correct answer was " + correctAnswer
             );
-            System.out.println("Let's try again, " + username + "!");
+            System.out.println("Let's try again, " + name + "!");
 
             return false;
         }
