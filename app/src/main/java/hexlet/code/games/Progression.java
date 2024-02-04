@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Progression {
     static final int MAX_START_NUMBER = 25;
@@ -20,7 +21,7 @@ public class Progression {
     }
 
     public static String[] prepareData() {
-        int startNumber = (int) (Math.random() * MAX_START_NUMBER + 1);
+        int startNumber = Util.getRandomInt(1, MAX_START_NUMBER);
         int step = Util.getRandomInt(1, MAX_STEP);
         int skippedStep = Util.getRandomInt(1, MAX_STEP);
         var progressionNumbersString = new StringBuilder();

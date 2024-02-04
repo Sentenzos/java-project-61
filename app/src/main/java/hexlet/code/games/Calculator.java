@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Calculator {
     static final int MAX_NUMBER = 100;
@@ -24,7 +25,13 @@ public class Calculator {
         String[] operators = {"+", "-", "*"};
         int operatorIndex = Util.getRandomInt(0, 2);
         var operator = operators[operatorIndex];
+        String question = number1 + " " + operator + " " + number2;
+        String correctAnswer = Calculator.calculate(number1, number2, operator);
 
+        return new String[]{question, correctAnswer};
+    }
+
+    private static String calculate(int number1, int number2, String operator) {
         int mathExpressionResult = switch (operator) {
             case "+" -> number1 + number2;
             case "-" -> number1 - number2;
@@ -32,9 +39,6 @@ public class Calculator {
             default -> 0;
         };
 
-        String question = number1 + " " + operator + " " + number2;
-        String correctAnswer = Integer.toString(mathExpressionResult);
-
-        return new String[]{question, correctAnswer};
+        return Integer.toString(mathExpressionResult);
     }
 }

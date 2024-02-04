@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Prime {
     static final int MAX_NUMBER = 100;
@@ -19,17 +20,21 @@ public class Prime {
 
     public static String[] prepareData() {
         int randomNumber = Util.getRandomInt(2, MAX_NUMBER);
-
         String question = Integer.toString(randomNumber);
-        String correctAnswer = "yes";
+        String correctAnswer = Prime.calculate(randomNumber);
 
-        for (var j = 2; j < randomNumber; j++) {
-            if (randomNumber % j == 0) {
-                correctAnswer = "no";
+        return new String[] {question, correctAnswer};
+    }
+
+    private static String calculate(int number) {
+        String answer = "yes";
+        for (var j = 2; j < number; j++) {
+            if (number % j == 0) {
+                answer = "no";
                 break;
             }
         }
 
-        return new String[] {question, correctAnswer};
+        return answer;
     }
 }

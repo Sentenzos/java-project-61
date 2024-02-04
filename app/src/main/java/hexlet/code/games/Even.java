@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Even {
     static final int MAX_NUMBER = 50;
@@ -20,9 +21,13 @@ public class Even {
     public static String[] prepareData() {
         int number = Util.getRandomInt(1, MAX_NUMBER);
         String question = Integer.toString(number);
-        String correctAnswer = number % 2 == 0 ? "yes" : "no";
+        String correctAnswer = Even.calculate(number);
 
         return new String[]{question, correctAnswer};
+    }
+
+    private static String calculate(int number) {
+        return number % 2 == 0 ? "yes" : "no";
     }
 }
 

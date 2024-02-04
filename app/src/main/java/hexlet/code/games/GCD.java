@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class GCD {
     static final int MAX_VALUE = 100;
@@ -20,22 +21,23 @@ public class GCD {
     public static String[] prepareData() {
         int number1 = Util.getRandomInt(1, MAX_VALUE);
         int number2 = Util.getRandomInt(1, MAX_VALUE);
-
         int minNumber = Math.min(number1, number2);
         int maxNumber = Math.max(number1, number2);
+        String question = minNumber + " " + maxNumber;
+        String correctAnswer = GCD.calculate(minNumber, maxNumber);
 
+        return new String[] {question, correctAnswer};
+    }
+
+    private static String calculate(int minNumber, int maxNumber) {
         int gcd = 1;
-
         for (var j = 1; j <= minNumber; j++) {
             if (minNumber % j == 0 && maxNumber % j == 0) {
                 gcd = j;
             }
         }
 
-        String question = minNumber + " " + maxNumber;
-        String correctAnswer = Integer.toString(gcd);
-
-        return new String[] {question, correctAnswer};
+        return Integer.toString(gcd);
     }
 }
 

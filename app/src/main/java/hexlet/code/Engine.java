@@ -15,7 +15,6 @@ public class Engine {
         Engine.name = username;
         System.out.println("Hello, " + username + "!");
         System.out.println(rules);
-
         for (var i = 0; i < Engine.ROUNDS; i++) {
             String question = gameData[i][0];
             String correctAnswer = gameData[i][1];
@@ -29,9 +28,7 @@ public class Engine {
                     System.out.println("Congratulations, " + name + "!");
                 }
             } else {
-                System.out.println(
-                        "'" + answer + "'" + " is wrong answer ;(. Correct answer was " + correctAnswer
-                );
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + correctAnswer);
                 System.out.println("Let's try again, " + name + "!");
                 break;
             }
