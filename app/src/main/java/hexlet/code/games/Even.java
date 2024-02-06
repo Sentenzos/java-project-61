@@ -21,13 +21,13 @@ public class Even {
     public static String[] prepareData() {
         int number = Util.getRandomInt(1, MAX_NUMBER);
         String question = Integer.toString(number);
-        String answer = Even.calculate(number);
+        String answer = Even.calculate(number) ? "yes" : "no";
 
         return new String[]{question, answer};
     }
 
-    private static String calculate(int number) {
-        return number % 2 == 0 ? "yes" : "no";
+    private static boolean calculate(int number) {
+        return number % 2 == 0;
     }
 }
 

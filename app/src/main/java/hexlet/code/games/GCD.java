@@ -24,12 +24,12 @@ public class GCD {
         int minNumber = Math.min(number1, number2);
         int maxNumber = Math.max(number1, number2);
         String question = minNumber + " " + maxNumber;
-        String answer = GCD.calculate(minNumber, maxNumber);
+        int answer = GCD.calculate(minNumber, maxNumber);
 
-        return new String[] {question, answer};
+        return new String[] {question, Integer.toString(answer)};
     }
 
-    private static String calculate(int minNumber, int maxNumber) {
+    private static int calculate(int minNumber, int maxNumber) {
         int gcd = 1;
         for (var j = 1; j <= minNumber; j++) {
             if (minNumber % j == 0 && maxNumber % j == 0) {
@@ -37,7 +37,7 @@ public class GCD {
             }
         }
 
-        return Integer.toString(gcd);
+        return gcd;
     }
 }
 
