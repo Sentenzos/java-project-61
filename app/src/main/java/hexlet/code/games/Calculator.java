@@ -26,9 +26,9 @@ public class Calculator {
         int operatorIndex = Util.getRandomInt(0, 2);
         var operator = operators[operatorIndex];
         String question = number1 + " " + operator + " " + number2;
-        String correctAnswer = Calculator.calculate(number1, number2, operator);
+        String answer = Calculator.calculate(number1, number2, operator);
 
-        return new String[]{question, correctAnswer};
+        return new String[]{question, answer};
     }
 
     private static String calculate(int number1, int number2, String operator) {

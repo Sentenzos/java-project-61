@@ -21,9 +21,9 @@ public class Even {
     public static String[] prepareData() {
         int number = Util.getRandomInt(1, MAX_NUMBER);
         String question = Integer.toString(number);
-        String correctAnswer = Even.calculate(number);
+        String answer = Even.calculate(number);
 
-        return new String[]{question, correctAnswer};
+        return new String[]{question, answer};
     }
 
     private static String calculate(int number) {

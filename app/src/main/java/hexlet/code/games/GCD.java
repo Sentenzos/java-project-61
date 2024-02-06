@@ -24,9 +24,9 @@ public class GCD {
         int minNumber = Math.min(number1, number2);
         int maxNumber = Math.max(number1, number2);
         String question = minNumber + " " + maxNumber;
-        String correctAnswer = GCD.calculate(minNumber, maxNumber);
+        String answer = GCD.calculate(minNumber, maxNumber);
 
-        return new String[] {question, correctAnswer};
+        return new String[] {question, answer};
     }
 
     private static String calculate(int minNumber, int maxNumber) {

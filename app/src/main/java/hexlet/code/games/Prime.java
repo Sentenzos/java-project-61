@@ -21,9 +21,9 @@ public class Prime {
     public static String[] prepareData() {
         int randomNumber = Util.getRandomInt(2, MAX_NUMBER);
         String question = Integer.toString(randomNumber);
-        String correctAnswer = Prime.calculate(randomNumber);
+        String answer = Prime.calculate(randomNumber);
 
-        return new String[] {question, correctAnswer};
+        return new String[] {question, answer};
     }
 
     private static String calculate(int number) {
