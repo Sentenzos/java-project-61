@@ -24,30 +24,22 @@ public class Progression {
         int startNumber = Util.getRandomInt(1, MAX_START_NUMBER);
         int step = Util.getRandomInt(1, MAX_STEP);
         int skippedStep = Util.getRandomInt(1, MAX_STEP);
-        String[] progressionArray = new String[PROGRESSION_LENGTH];
-        int resultNumber = startNumber;
-        for (var j = 0; j < PROGRESSION_LENGTH; j++) {
-            resultNumber += step;
-            progressionArray[j] = Integer.toString(resultNumber);
-        }
+        String[] progressionArray = calculate(startNumber, step);
+        String answer = progressionArray[skippedStep - 1];
         progressionArray[skippedStep - 1] = "..";
-
         String question = String.join(" ", progressionArray);
-        String answer = calculate(startNumber, step, skippedStep);
 
         return new String[] {question, answer};
     }
 
-    private static String calculate(int startNumber, int step, int skippedStep) {
+    private static String[] calculate(int startNumber, int step) {
         int tempNumber = startNumber;
-        int answer = 0;
+        String[] progressionArray = new String[PROGRESSION_LENGTH];
         for (var j = 0; j < PROGRESSION_LENGTH; j++) {
             tempNumber += step;
-            if (j == skippedStep - 1) {
-                answer = tempNumber;
-            }
+            progressionArray[j] = Integer.toString(tempNumber);
         }
 
-        return Integer.toString(answer);
+        return progressionArray;
     }
 }
