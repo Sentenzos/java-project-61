@@ -13,7 +13,7 @@ public class Engine {
         String username = scanner.next();
         System.out.println("Hello, " + username + "!");
         System.out.println(rules);
-        for (var i = 0; i < Engine.ROUNDS; i++) {
+        for (var i = 0; i < ROUNDS; i++) {
             String question = gameData[i][0];
             String correctAnswer = gameData[i][1];
             System.out.println("Question: " + question);

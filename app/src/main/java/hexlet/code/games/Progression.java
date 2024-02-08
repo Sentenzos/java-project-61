@@ -13,18 +13,18 @@ public class Progression {
         String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String[] roundData = Progression.prepareData();
+            String[] roundData = prepareData();
             gameData[i] = roundData;
         }
 
         Engine.handleGame(RULES, gameData);
     }
 
-    public static String[] prepareData() {
+    private static String[] prepareData() {
         int startNumber = Util.getRandomInt(1, MAX_START_NUMBER);
         int step = Util.getRandomInt(1, MAX_STEP);
         int skippedStep = Util.getRandomInt(1, MAX_STEP);
-        String[] progressionArray = calculate(startNumber, step);
+        String[] progressionArray = getProgression(startNumber, step);
         String answer = progressionArray[skippedStep - 1];
         progressionArray[skippedStep - 1] = "..";
         String question = String.join(" ", progressionArray);
@@ -32,7 +32,7 @@ public class Progression {
         return new String[] {question, answer};
     }
 
-    private static String[] calculate(int startNumber, int step) {
+    private static String[] getProgression(int startNumber, int step) {
         int tempNumber = startNumber;
         String[] progressionArray = new String[PROGRESSION_LENGTH];
         for (var j = 0; j < PROGRESSION_LENGTH; j++) {

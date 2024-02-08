@@ -11,7 +11,7 @@ public class Calculator {
         String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String[] roundData = Calculator.prepareData();
+            String[] roundData = prepareData();
             gameData[i] = roundData;
         }
 
@@ -26,7 +26,7 @@ public class Calculator {
         int operatorIndex = Util.getRandomInt(0, 2);
         var operator = operators[operatorIndex];
         String question = number1 + " " + operator + " " + number2;
-        String answer = Calculator.calculate(number1, number2, operator);
+        String answer = calculate(number1, number2, operator);
 
         return new String[]{question, answer};
     }

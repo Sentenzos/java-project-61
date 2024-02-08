@@ -11,22 +11,22 @@ public class Prime {
         String[][] gameData = new String[Engine.ROUNDS][Engine.ARGUMENTS_NUMBER];
 
         for (var i = 0; i < Engine.ROUNDS; i++) {
-            String[] roundData = Prime.prepareData();
+            String[] roundData = prepareData();
             gameData[i] = roundData;
         }
 
         Engine.handleGame(RULES, gameData);
     }
 
-    public static String[] prepareData() {
+    private static String[] prepareData() {
         int randomNumber = Util.getRandomInt(2, MAX_NUMBER);
         String question = Integer.toString(randomNumber);
-        String answer = Prime.calculate(randomNumber) ? "yes" : "no";
+        String answer = isPrime(randomNumber) ? "yes" : "no";
 
         return new String[] {question, answer};
     }
 
-    private static boolean calculate(int number) {
+    private static boolean isPrime(int number) {
         boolean result = true;
         for (var j = 2; j < number; j++) {
             if (number % j == 0) {
