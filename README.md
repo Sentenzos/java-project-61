@@ -5,7 +5,7 @@
 
 "Mind Games" is a set of five console games built on the principle of popular mobile brain training applications. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered passed. Incorrect answers end the game and offer the option to start over. The games include:
 
-* Even: Determining even numbers. \n
+* Even: Determining even numbers.
 * Calculator: Arithmetic expressions that need to be calculated.
 * GCD: Determining the greatest common divisor.
 * Progression: Finding missing numbers in a sequence of numbers.
